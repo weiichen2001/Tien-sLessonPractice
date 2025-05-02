@@ -1,0 +1,78 @@
+@charset "UTF-8";
+a {
+  display: block;
+  color: black;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.menu a {
+  margin: 10px;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+  color: var(--color-deep);
+}
+.menu a:hover {
+  border-bottom: 2px solid #cdaaab;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+#navbar .logo {
+  width: 65px;
+}
+#navbar .navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#navbar .navigation ul {
+  display: flex;
+}
+#navbar .navigation icon a {
+  width: 35px;
+  height: 35px;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+
+/* icon區 */
+.icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+.icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+.icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+
+.font-1 {
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg {
+  background-color: #cdaaab;
+  background-image: url("img.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}

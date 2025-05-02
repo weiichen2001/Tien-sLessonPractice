@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* 上面是CSS的預設，第一行一定要是UTF-8 */
+/* 頁首區 */
+/* 設定logo屬性 */
+.logo {
+    float: left;
+    /* 改變為浮動區塊，以利並排 */
+    width: 100px;
+    margin: 0;
+    /*取消h1/margin 0.67em間距預設值*/
+}
+
+/* float跟inline block都是直接加屬性在要變並排的子元素 */
+.navigation {
+    float: left;
+}
+
+.navigation ul {
+    /* 取消ul預設值 */
+    list-style-type: none;
+    margin: 0;
+}
+
+/* 要從navigation的裡面抓子元素，就空格然後打子元素容器 */
+.navigation li {
+    display: inline-block;
+    margin: 0 10px;
+    height: 40px;
+    /*設定與logo相同高度*/
+    line-height: 40px;
+    /*利用行高設定與高度相同，使其內容垂直置中*/
+
+}
+
+/* 要改掉a的預設顏色 */
+.navigation a {
+    color: #FF60AF;
+    /*修改瀏覽器預設字色，只寫color所以全部動作的color都會變這色  */
+    text-decoration: wavy;
+    /* 預設是underline */
+}
+
+.navigation a:hover {
+    color: #0080FF;
+}
+
+/* 廣告橫幅區 */
+#banner img {
+    width: 100%;
+}
+
+/* 餐廳介紹 */
+.rest-pt {
+    float: left;
+    width: 45%;
+    margin: 20px 2.5%;
+    /*figure左右兩側預設padding單位是px，統一改成百分比去控制窟段才不會縮到比較小開始跑版*/
+}
+
+.rest-pt img {
+    width: 100%;
+}
+
+.content {
+    float: left;
+    width: 50%;
+}
+
+.content p {
+    font-size: 14px;
+    line-height: 1.5;
+    /*1.5倍可以寫1.5或是150%*/
+}
+.content a{
+    color:#0152B9;
+    text-decoration: none;
+}
+.content a:hover{
+    color:#FF60AF;
+    text-decoration: underline;
+}
+.api{
+    clear: both; /*清除前面float空間，清除後此元素會回復到原來的位置*/
+}
+.col{
+    padding: 50px 0; /* 縮寫:p50-0*/
+    float: left;
+    width: 50%;
+    /* text-align: center; 設定影片置中:需要從父元素設定文字置中，可以控制子元素行內文字置中; */
+}
+iframe{
+    display: block;
+    margin: 0 auto;
+    width: 80%; /*從CSS去改變比例會有黑邊，以百分比的話會比較方便縮放*/
+    height: 350px; 
+}
+footer{
+    clear: both;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}

@@ -1,0 +1,31 @@
+@use "./function/" as f;
+@use "./variable/" as v;
+
+.box {
+    @extend %flex-center;
+    flex-direction: column;
+    @include f.bg(url(../images/pt1.jpg));
+}
+
+.menu {
+    @extend %flex-center;
+    @include f.bg(url(../images/pt2.jpg) ,$color:v.$color-lesser1);
+}
+
+.main-title {
+    font-family: Arial, Helvetica, sans-serif;
+    @include f.title-l;
+    @include f.bordered( 3px,v.$color-black);
+
+    // 平板
+    @media(max-width:820px) {
+        @include f.title-m;
+        @include f.bordered( 2px,v.$color-deep);
+    }
+
+    // 手機
+    @media(max-width:640px) {
+        @include f.title-s;
+        @include f.bordered( 1px,v.$color-grey);
+    }
+}

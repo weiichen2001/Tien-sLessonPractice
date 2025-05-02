@@ -1,0 +1,24 @@
+@use "../variable/" as v;
+
+@mixin title-l {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@mixin title-m {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@mixin title-s {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@mixin bordered($color,$width) {
+    border:$width solid $color;
+}
+
+@mixin bg($img,$attachment:scroll,$color:v.$color-lesser3,$repeat:no-repeat){
+    background: $img $attachment $color center;
+}

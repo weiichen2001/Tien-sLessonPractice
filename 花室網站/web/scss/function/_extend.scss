@@ -1,0 +1,95 @@
+@use"../variable/" as*;
+@use"../function/mixin" as*;
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%input-style {
+    border: 1px solid $color-lesser3;
+    border-radius: $radius-s;
+    padding: 4px;
+    font-size: map-get($font-size, s);
+
+    &::placeholder {
+        color: $color-lesser3;
+        font-size: map-get($font-size, xs);
+    }
+
+    &:focus {
+        outline: 1px solid $color-lesser3;
+    }
+}
+
+
+%btn-form {
+    // position: relative;
+    // outline: none;
+    // text-decoration: none;
+    border-radius: $radius-ex;
+    //讓子元素置中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    // text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    // opacity: 1;
+
+    //　套用玻璃擬態以下重複樣式可不設定
+    // 修改button預設樣式
+    // background-color: #ffffff;
+    // border: 1px solid $color-lesser3;
+
+    span {
+        color: $color-black;
+        font-size: map-get($font-size, xs);
+        font-weight: $bold;
+        letter-spacing: 0.7px;
+    }
+
+}
+
+// 背景固定
+%bg-cover {
+    background-position: center;
+    background-size: cover;
+    // background-repeat: no-repeat;
+}
+
+// 多行省略
+%multiple-line {
+    overflow: clip;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+// 單行省略
+%single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+
+
+
+// 列表容器
+%box-list {
+    display: flex;
+    width: 75%;
+    max-width: 1360px;
+
+    .item {
+        flex: 1; //均分容器的寬度，寫在子元素身上
+        margin: $space-x-l;
+        overflow: clip;
+        border-radius: $radius-l;
+        @include bordered;
+    }
+}

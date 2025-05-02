@@ -1,0 +1,128 @@
+//前綴詞prefix，更改冒號後的名稱，有套用該$字符號的項目名稱會跟著一併改變
+$navigation: navbar;
+$button: btn;
+
+
+
+//color var
+$color-black: black;
+$color-deep: #444;
+$color-grey: #999;
+$color-light: #f1f1f1;
+$color-bg1: #F2EDF0;
+$color-bg2: #E6ECE5;
+$color-bg3: #ECF0F4;
+$color-lesser1: #f3e4e4;
+$color-lesser2: #efdbdb;
+$color-lesser3: #cdaaab;
+$color-lesser4: #8f6b6d;
+
+//font-size
+$font-size: (//map-get($font-size, )
+    xs: .8rem,
+    s: 1rem,
+    m: 1.2rem,
+    l: 1.5rem,
+    xl: 1.8rem,
+    xxl: 2rem
+);
+
+
+a {
+    display: block;
+    color: $color-black;
+    font-size:map-get($font-size,xs);
+    text-decoration: none;
+
+    .menu & {
+        margin: 10px;
+        padding: 5px 0;
+        border-bottom: 2px solid transparent;
+        transition: all .3s;
+        color: var(--color-deep
+        );
+
+    &:hover {
+        border-bottom: 2px solid $color-lesser3;
+    }
+}
+}
+
+
+
+##{$navigation} {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    .logo {
+        width: 65px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        ul {
+            display: flex;
+        }
+
+        icon {
+            a {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+                transition: all .3s;
+            }
+        }
+    }
+
+}
+
+/* icon區 */
+.icon-fb {
+    background-image: url(../images/icon-fb.svg);
+
+    &:hover {
+        background-image: url(../images/icon-fb-hover.svg);
+    }
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+
+    &:hover {
+        background-image: url(../images/icon-ig-hover.svg);
+    }
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+
+    &:hover {
+        background-image: url(../images/icon-line-hover.svg);
+    }
+}
+
+
+.font-1 {
+    font: {
+        style: italic;
+        variant: small-caps;
+        weight: bold;
+        size: 20px;
+        family: Arial, Helvetica, sans-serif;
+
+    }
+}
+
+.bg {
+    background: {
+        color: $color-lesser3;
+        image: url('img.png');
+        repeat: no-repeat;
+        attachment: fixed;
+        position: center center;
+    }
+}

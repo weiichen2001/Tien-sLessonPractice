@@ -1,0 +1,37 @@
+@use "../variable/" as v;
+// 混用mixin(需調用)
+// RWD樣式不同時使用mixin
+
+@mixin title-l {
+    font-size: map-get(v.$font-size,xxl);
+    font-weight: v.$bolder;
+}
+
+@mixin title-m {
+    font-size: map-get(v.$font-size,l);
+    font-weight: v.$bold;
+}
+
+@mixin title-s {
+    font-size: map-get(v.$font-size,m);
+    font-weight: v.$bold;
+}
+
+
+@mixin bordered($color:v.$color-deep, $width:1px) {
+    border: $width solid $color;
+}
+
+@mixin bg($img, $attachment: scroll, $color: v.$color-lesser3, $repeat: no-repeat) {
+    background: $img $attachment $color center;
+}
+
+@mixin glassmorphism {
+    background-color: v.$alpha-w20;
+    backdrop-filter: blur(25px);
+    box-shadow: 2px 2px 2px v.$alpha-b15,
+        inset 2px 2px 5px v.$alpha-w30; //內陰影
+    border:1px solid v.$alpha-w50;
+    border-radius: v.$radius-ex;
+}
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單</title>
+
+    <style>
+        /* 加了>代表只抓第一層 */
+        #member-edit-form>label,
+        #member-edit-form>input {
+            display: block;
+        }
+
+        #member-edit-form label,
+        #member-edit-form fieldset {
+            margin-top: 20px;
+        }
+
+        /* 用CSS指定寬度會一致，例如:style="width: 150px;" */
+    </style>
+</head>
+
+<body>
+    <!-- 表單標題 -->
+    <h2>搜尋商品:</h2>
+    <!-- 搜尋商品表單 -->
+    <!-- 表單大部分都用post，不會用get -->
+    <form action="" method="post" name="product-search-form" id="product-search-form" title="搜尋商品表單">
+        <!-- 欄位名稱 -->
+        <label for="search">搜尋</label>
+        <!-- 文字欄位 -->
+        <input type="search" name="search" id="search">
+        <!-- 按鈕 -->
+        <input type="submit" value="搜尋">
+
+    </form>
+    <!-- 會員資料修改表單 -->
+    <form action="" method="post" name="member-edit-form" id="member-edit-form" title="會員資料修改表單">
+        <!-- 表單標題可放置在任何位置 -->
+        <h2>會員資料修改:</h2>
+
+        <!-- 表單欄位 -->
+        <!-- 提示文字:placeholder/必填:required/自動聚焦:autofocus-->
+        <label for="username">*姓名</label>
+        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autofocus>
+
+        <!-- 最大字元數:maxlength="10"/只讀:readonly(不常用) -->
+        <label for="">*身分證字號(只讀)</label>
+        <input type="text" name="userid" id="userid" title="身份證字號欄位" maxlength="10" readonly value="A556886155">
+
+        <!-- 禁用:disabled -->
+        <label for="account">*帳號:(禁用)</label>
+        <input type="text" name="account" id="account" title="帳號欄位" value="weiichen" disabled>
+
+        <!-- 自動完成(抓紀錄)預設為on，若不記錄才要定義off -->
+        <label for="password">*密碼</label>
+        <input type="password" name="password" id="password" autocomplete="off" required>
+
+        <label for="password-1">*確認密碼</label>
+        <input type="password" name="password" id="password-1" autocomplete="off" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email">
+
+        <label for="tel">聯絡電話:</label>
+        <input type="tel" name="tel" id="tel">
+
+        <label for="url">網站:</label>
+        <input type="url" name="url" id="url">
+
+        <label for="birthday">生日:</label>
+        <input type="date" name="birthday" id="birthday">
+
+        <!-- 下拉選單:<select> -->
+        <label for="sex">性別:</label>
+        <select name="sex" id="sex">
+            <option value="">請選擇</option>
+            <option value="男">生理男</option>
+            <option value="女">生理女</option>
+            <option value="不透露">不透露</option>
+        </select>
+
+
+        <!-- 有分類別的下拉選單:<optgroup label="類別一"> -->
+        <label for="other">其他類別:</label>
+        <select name="other" id="other">
+            <option value="">請選擇</option>
+            <!-- 類別一 -->
+            <optgroup label="類別一">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+            <!-- 類別二 -->
+            <optgroup label="類別二">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+        </select>
+
+        <!-- 相關選項(元素)群組:<fieldset> -->
+        <fieldset>
+            <!-- 群組標題:<legend> -->
+            <legend>會員類型:(多選)</legend>
+
+            <!-- 用name名稱來判斷是否為同組選項 -->
+            <input type="radio" name="member1" id="member-1">
+            <label for="member-1">金卡會員</label>
+
+            <input type="radio" name="member2" id="member-2">
+            <label for="member-2">銀卡會員</label>
+
+            <input type="radio" name="member3" id="member-3">
+            <label for="member-3">銅卡會員</label>
+        </fieldset>
+
+        <!-- 相關選項(元素)群組:<fieldset> -->
+        <fieldset disabled>
+            <!-- 群組標題:<legend> -->
+            <legend>會員類型:(單選)</legend>
+
+            <!-- 用name名稱來判斷是否為同組選項 -->
+            <input type="radio" name="category" id="category-1" checked>
+            <label for="category-1">金卡會員</label>
+
+            <input type="radio" name="category" id="category-2">
+            <label for="category-2">銀卡會員</label>
+
+            <input type="radio" name="category" id="category-3">
+            <label for="category-3">銅卡會員</label>
+        </fieldset>
+
+        <!-- 核取方塊 -->
+         <Fieldset>
+            <legend>訂閱內容:(複選)</legend>
+
+            <input type="checkbox" name="order" id="order1">
+            <label for="order1">國際</label>
+            <input type="checkbox" name="order" id="order2">
+            <label for="order2">社會</label>
+            <input type="checkbox" name="order" id="order3">
+            <label for="order3">娛樂</label>
+            <input type="checkbox" name="order" id="order4">
+            <label for="order4">財經</label>
+            <input type="checkbox" name="order" id="order5">
+            <label for="order5">生活</label>
+
+         </Fieldset>
+
+
+        <!-- 多個值:multiple -->
+        <label for="file">上傳檔案:</label>
+        <input type="file" name="file" id="file" multiple>
+
+        <label for="color">選擇顏色:</label>
+        <input type="color" name="color" id="color">
+
+        <!-- 按鈕 -->
+        <input type="reset" value="重填">
+        <input type="submit" value="送出">
+
+    </form>
+</body>
+
+</html>
